@@ -1,0 +1,12 @@
+<h1>Pollpulus</h1>
+<a href="/questions/new">Ask a Question</a>
+
+{{#each questions}}
+<a href="/questions/show/{{_id}}" target="_blank">
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    {{question}}
+	  </div>
+	</div>
+</a>
+{{/each}}
