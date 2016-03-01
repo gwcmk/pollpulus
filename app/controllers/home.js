@@ -40,19 +40,23 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  Question.findOne({}, function(err, q) {
-    if (err) res.render('index');
-    if (q === null)
-      res.render('index');
-    else {
-      Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
-        res.render('index', {
-          question: q,
-          answers: answers
+  if (req.user)
+    res.redirect('/questions');
+  else {
+    Question.findOne({}, function(err, q) {
+      if (err) res.render('index');
+      if (q === null)
+        res.render('index');
+      else {
+        Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
+          res.render('index', {
+            question: q,
+            answers: answers
+          });
         });
-      });
-    } 
-  });
+      } 
+    });
+  }
 });
 
 router.get('/questions', function (req, res, next) {

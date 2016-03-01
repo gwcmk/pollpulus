@@ -62,3 +62,6 @@ a {
     background-color: #48CFAD !important; }
   #poll button {
     float: right; }
+
+#back-to-questions {
+  margin-top: 5vh; }
