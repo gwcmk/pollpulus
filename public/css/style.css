@@ -7,3 +7,12 @@ a {
 
 #add-answer {
   margin-bottom: 15px; }
+
+.navbar-brand {
+  padding: 0 0; }
+
+.navbar-brand img {
+  max-height: 100%; }
+
+.navbar-text {
+  color: white; }
