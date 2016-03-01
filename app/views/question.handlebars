@@ -1,10 +1,13 @@
-<div class="panel panel-default">
-  <div class="panel-heading">{{question}}</div>
-  <div class="panel-body">
-  	<ul>
-	{{#each answers}}
-		<li>{{answer}}</li>
-	{{/each}}
-    </ul>
-  </div>
+<div class="row">
+	<div class="col-md-12">
+		<div id="poll">
+			<h5>{{question}}</h5>
+			<div class="list-group">
+			{{#each answers}}
+				<a href="#" class="list-group-item poll-answer" id="answer{{@index}}">{{answer}}</a>
+			{{/each}}
+			</div>
+			<button class="btn btn-default">Submit</button>
+		</div>
+	</div>
 </div>

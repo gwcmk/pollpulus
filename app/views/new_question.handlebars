@@ -1,16 +1,24 @@
-<form method="POST" action="/questions/new">
-  <div class="form-group">
-    <label for="question">Question:</label>
-    <input name="question" type="text" class="form-control" id="question" placeholder="Who should headline Dillo Day?">
+<div class="row">
+  <div class="col-md-12">
+
+    <form method="POST" action="/questions/new" id="new-question-form">
+      <h5>Submit a new poll by asking a question with at least two possible answers.</h5>
+      <div class="form-group">
+        <label for="question">Question:</label>
+        <input name="question" type="text" class="form-control" id="question" placeholder="Who should headline Dillo Day?">
+      </div>
+      <div class="form-group">
+        <label for="answer1">Answer 1:</label>
+        <input name="answer1" type="text" class="form-control" id="answer1" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="answer2">Answer 2:</label>
+        <input name="answer2" type="text" class="form-control" id="answer2" placeholder="">
+      </div>
+      <button id="add-answer" class="btn btn-default">+</button><br>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="answer1">Answer 1:</label>
-    <input name="answer1" type="text" class="form-control" id="answer1" placeholder="">
-  </div>
-  <div class="form-group">
-    <label for="answer2">Answer 2:</label>
-    <input name="answer2" type="text" class="form-control" id="answer2" placeholder="">
-  </div>
-  <button id="add-answer" class="btn btn-default">+</button><br>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</div>
+
+

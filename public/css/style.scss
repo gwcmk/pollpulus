@@ -7,6 +7,37 @@ a {
   color: #00B7FF;
 }
 
+#new-question-form {
+	width: 60%;
+	margin: 0 auto;
+}
+
 #add-answer {
 	margin-bottom: 15px;
+}
+
+#questions-info-header {
+	margin-bottom: 2em;
+}
+
+.question-panel {
+	width: 90%;
+	background-color: #48CFAD !important;
+	color: white;
+	margin: 0 auto;
+	font-size: 1.5em;
+	.question-votes {
+		float: right;
+	}
+}
+
+#poll {
+	width: 60%;
+	margin: 0 auto;
+	.active {
+		background-color: #48CFAD !important;
+	}
+	button {
+		float: right;
+	}
 }

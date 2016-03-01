@@ -1,12 +1,23 @@
-<h1>Pollpulus</h1>
-<a href="/questions/new">Ask a Question</a>
-
-{{#each questions}}
-<a href="/questions/show/{{_id}}" target="_blank">
-	<div class="panel panel-default">
-	  <div class="panel-body">
-	    {{question}}
-	  </div>
+<div class="row" id="questions-info-header">
+	<div class="col-md-6">
+		<h5>Welcome to Pollpulus! This is a list of today's active polls. You can participate in a poll by clicking on it and voting. You can add a new poll by clicking the button on the right of this page.</h5>
 	</div>
-</a>
-{{/each}}
+	<div class="col-md-6">
+		<a class="btn btn-default" href="/questions/new" role="button" style="float: right;">Add a new poll</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">	
+		{{#each questions}}
+		<a href="/questions/show/{{_id}}" target="_blank">
+			<div class="panel panel-default question-panel">
+			  <div class="panel-body">
+			    {{question}}
+			    <span class="question-votes">{{votes}}</span>
+			  </div>
+			</div>
+		</a>
+		{{/each}}
+	</div>
+</div>
