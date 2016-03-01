@@ -40,7 +40,15 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  res.render('index');
+  Question.findOne({}, function(err, q) {
+    if (err) res.render('index');
+    Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
+      res.render('index', {
+        question: q,
+        answers: answers
+      });
+    });
+  });
 });
 
 router.get('/questions', function (req, res, next) {

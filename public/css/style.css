@@ -8,12 +8,28 @@ a {
 .btn-green:hover {
   background-color: #48CFAD !important; }
 
+#homepage {
+  margin-top: 2em; }
+
+#welcome {
+  margin-bottom: 0.5em; }
+
+#welcome-desc {
+  font-size: 25px; }
+
+.welcome-btn {
+  background-color: #48CFAD !important;
+  margin: 0em 1em 0 0; }
+
 #new-question-form {
   width: 60%;
   margin: 0 auto; }
 
 #add-answer {
   margin-bottom: 15px; }
+
+.navbar-default {
+  background-color: #48CFAD !important; }
 
 .navbar-brand {
   padding: 0 0; }
