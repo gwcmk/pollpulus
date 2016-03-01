@@ -1,14 +1,10 @@
 <div class="row" id="questions-info-header">
-	<div class="col-md-6">
-		<h5>Welcome to Pollpulus! This is a list of today's active polls. You can participate in a poll by clicking on it and voting. You can add a new poll by clicking the button on the right of this page.</h5>
+	<div class="col-md-4">
+		<h5>Welcome to Pollpulus! This is a list of today's active polls. You can participate in a poll by clicking on it and voting. You can also submit a new poll.</h5>
+		<a id="submit-poll" class="btn btn-default btn-green" href="/questions/new" role="button">Submit a new poll</a>
 	</div>
-	<div class="col-md-6">
-		<a class="btn btn-default" href="/questions/new" role="button" style="float: right;">Add a new poll</a>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-12">	
+	<div class="col-md-8">
+		<h5 id="current-date"></h5>
 		{{#each questions}}
 		<a href="/questions/show/{{_id}}" target="_blank">
 			<div class="panel panel-default question-panel">
@@ -21,3 +17,8 @@
 		{{/each}}
 	</div>
 </div>
+
+<script type="text/javascript">
+	var date = new Date();
+	document.getElementById('current-date').innerHTML = date.toDateString();
+</script>
