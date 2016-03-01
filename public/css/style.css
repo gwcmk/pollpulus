@@ -5,6 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
+.btn-green:hover {
+  background-color: #48CFAD !important; }
+
 #new-question-form {
   width: 60%;
   margin: 0 auto; }
@@ -22,7 +25,10 @@ a {
   color: white; }
 
 #questions-info-header {
-  margin-bottom: 2em; }
+  margin: 2em 0; }
+
+#current-date {
+  margin-left: 5%; }
 
 .question-panel {
   width: 90%;

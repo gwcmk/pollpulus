@@ -84,9 +84,20 @@ router.get('/questions/show/:id', function(req, res) {
   Question.findOne({_id: new ObjectID(req.params.id)}, function(err, q) {
     if (err) return;
     Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
-      console.log(answers);
       res.render('question', {
-        question: q.question,
+        question: q,
+        answers: answers
+      });
+    });
+  });
+});
+
+router.get('/questions/results/:id', function(req, res) {
+  Question.findOne({_id: new ObjectID(req.params.id)}, function(err, q) {
+    if (err) return;
+    Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
+      res.render('results', {
+        question: q,
         answers: answers
       });
     });
@@ -131,4 +142,16 @@ router.post('/questions/new', function (req, res, next) {
       });
     });
   });
+});
+
+router.post('/questions/:id', function (req, res, next) {
+  Question.update({ _id: new ObjectID(req.params.id) }, { $inc: { votes: 1 } }, function(err) {
+    if (err) console.error(err);
+  });
+
+  Answer.update({ _id: new ObjectID(req.body.answer) }, { $inc: { votes: 1 } }, function(err) {
+    if (err) console.error(err);
+  });
+
+  res.redirect('/questions/results/' + req.params.id)
 });

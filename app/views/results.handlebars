@@ -1,0 +1,16 @@
+<div class="question hidden">
+	{{question.question}}
+</div>
+
+{{#each answers}}
+<div class="answer-data hidden">
+	<div class="answer">
+		{{answer}}
+	</div>
+	<div class="votes">
+		{{votes}}
+	</div>
+</div>
+{{/each}}
+
+<div id="pie" style="height: 80vh width: 50vw; margin: 10vh auto"></div>
