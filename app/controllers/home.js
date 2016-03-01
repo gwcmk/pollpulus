@@ -42,12 +42,16 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
   Question.findOne({}, function(err, q) {
     if (err) res.render('index');
-    Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
-      res.render('index', {
-        question: q,
-        answers: answers
+    if (q === null)
+      res.render('index');
+    else {
+      Answer.find({ _id: { $in: q.answer_ids } }, function(err, answers) {
+        res.render('index', {
+          question: q,
+          answers: answers
+        });
       });
-    });
+    } 
   });
 });
 
