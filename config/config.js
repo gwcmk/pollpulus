@@ -26,8 +26,8 @@ var config = {
     app: {
       name: 'final'
     },
-    port: 3000,
-    db: 'mongodb://localhost/final-production'
+    port: process.env.PORT,
+    db: process.env.MONGOLAB_URI
   }
 };
 
